@@ -4,7 +4,7 @@ from langchain_core.documents import Document
 from langchain_text_splitters import RecursiveCharacterTextSplitter 
 from pypdf import PdfReader
 import os
-import uuid # <--- 2. NEW IMPORT for unique IDs
+import uuid 
 
 embdedding_model = "mxbai-embed-large:335m"
 embeddings = OllamaEmbeddings(model=embdedding_model)
@@ -16,10 +16,8 @@ def embedd_pdfs(file_paths, subject_name):
         collection_name="my_collection", 
         embedding_function=embeddings, 
         persist_directory=f'./subjects/{subject_name}/'+subject_name+'_chroma_db'
-    )
-    
+    )  
     # Initialize Text Splitter
-    # chunks of 1000 characters with 200 overlap is a standard starting point
     text_splitter = RecursiveCharacterTextSplitter(
         chunk_size=1000,
         chunk_overlap=200,
@@ -46,16 +44,11 @@ def embedd_pdfs(file_paths, subject_name):
     chunked_documents = text_splitter.split_documents(raw_documents)
 
     # 3. Generate unique IDs for the new chunks
-    # We cannot use the filename alone anymore because one file = many chunks
     ids = [str(uuid.uuid4()) for _ in chunked_documents]
 
     # 4. Add the CHUNKED documents to the store
     print(f"Adding {len(chunked_documents)} chunks to the vector store...")
     vector_store.add_documents(chunked_documents, ids=ids)
-    
-    # Note: In newer LangChain Chroma versions, persist() is often automatic, 
-    # but we can keep it if your version requires it.
-    # vector_store.persist()
  
 def get_retriever(subject_name):
     vector_store = Chroma(
@@ -63,4 +56,5 @@ def get_retriever(subject_name):
         embedding_function=embeddings, 
         persist_directory=f'./subjects/{subject_name}/'+subject_name+'_chroma_db'
     )
+
     return vector_store.as_retriever(search_kwargs={"k": 3})
