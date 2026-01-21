@@ -1,12 +1,11 @@
-Here is a professional **README.md** tailored to your specific project stack and features. You can copy-paste this directly into your GitHub repository.
-
----
-
 # 📚 Local Study Assistant
 
 A fully local **RAG (Retrieval-Augmented Generation)** application that allows you to chat with your textbooks and PDF course materials. Built with Python, Streamlit, LangChain, and Ollama to ensure **100% data privacy** and **zero API costs**.
 
-*(Replace this link with an actual screenshot or GIF of your app in action)*
+
+https://github.com/user-attachments/assets/33b72497-a72a-48fe-9858-f91c877da47f
+
+
 
 ## 🚀 Features
 
@@ -40,7 +39,7 @@ A fully local **RAG (Retrieval-Augmented Generation)** application that allows y
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/abdo1salah/AI study assistant.git
+git clone https://github.com/abdo1salah/AI-study-assistant.git
 cd study-assistant
 
 ```
@@ -93,25 +92,3 @@ study-assistant/
 ├── generate_response.py   # RAG pipeline and Ollama generation logic
 ├── requirements.txt       # Project dependencies
 └── subjects/              # (Auto-generated) Stores vector DBs for each subject
-
-```
-
-## 🐛 Troubleshooting
-
-* **App crashes when submitting a question:**
-* Ensure Ollama is running (`ollama serve`).
-* If your RAM is low, switch to a smaller model like `tinyllama` or `qwen:0.5b` in `generate_response.py`.
-
-
-* **"Trio" or "Connection Lost" errors:**
-* This usually happens on Windows when using LangChain's async features. Ensure you are using the `ollama.chat` (native) method in `generate_response.py` as configured in this repo.
-
-
-
-## 🤝 Contributing
-
-Contributions are welcome! Feel free to open an issue or submit a pull request if you have ideas for improvements.
-
-## 📄 License
-
-This project is open-source and available under the [MIT License](https://www.google.com/search?q=LICENSE).
