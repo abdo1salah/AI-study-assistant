@@ -1,12 +1,8 @@
 from langchain_ollama import ChatOllama
 from langchain_core.prompts import ChatPromptTemplate
-from embedding import get_retriever # Assuming this is your file
-
-
+from embedding import get_retriever 
 
 model = ChatOllama(model="qwen2.5:3b", temperature=0)
-
-# 2. Define Tools
 
 template = """
 you are a study assistant. made to help answer questions based on provided study materials.
@@ -23,3 +19,4 @@ def generate_response(subject_name, user_input):
     retrieved_docs = retriever.invoke(user_input)
     result = chain.stream({"docs": retrieved_docs, "question": user_input})
     return result
+
