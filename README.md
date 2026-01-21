@@ -25,7 +25,7 @@ https://github.com/user-attachments/assets/33b72497-a72a-48fe-9858-f91c877da47f
 * **PDF Processing:** `pypdf`
 * **Models Used:**
 * **Embedding:** `mxbai-embed-large`
-* **Chat:** `qwen2.5:3b` (or `llama3`)
+* **Chat:** `qwen2.5:3b` 
 
 
 
