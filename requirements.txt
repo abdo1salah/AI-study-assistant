@@ -1,0 +1,9 @@
+streamlit
+streamlit-option-menu
+ollama
+langchain-ollama
+langchain-chroma
+langchain-text-splitters
+langchain-core
+pypdf
+chromadb
