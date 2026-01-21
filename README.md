@@ -3,7 +3,8 @@
 A fully local **RAG (Retrieval-Augmented Generation)** application that allows you to chat with your textbooks and PDF course materials. Built with Python, Streamlit, LangChain, and Ollama to ensure **100% data privacy** and **zero API costs**.
 
 
-https://github.com/user-attachments/assets/33b72497-a72a-48fe-9858-f91c877da47f
+
+https://github.com/user-attachments/assets/ef4fd2c2-1538-4e25-ac72-d07948c33625
 
 
 
