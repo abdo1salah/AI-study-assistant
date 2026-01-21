@@ -40,7 +40,7 @@ https://github.com/user-attachments/assets/33b72497-a72a-48fe-9858-f91c877da47f
 
 ```bash
 git clone https://github.com/abdo1salah/AI-study-assistant.git
-cd study-assistant
+cd AI-study-assistant
 
 ```
 
